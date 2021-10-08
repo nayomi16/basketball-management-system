@@ -7,7 +7,6 @@ from rest_framework.views import APIView
 # Create your views here.
 class CauchView(APIView):
    
-
     def get(self, request):
         teamList = TeamModel.objects.all()
         Serializer = TeamSerializer(teamList, many=True)

@@ -1,5 +1,9 @@
 from django.contrib import admin
-from system.models import TeamModel
+from django.apps import apps
 
 # Register your models here.
-admin.site.register(TeamModel)
+apps_config = apps.get_app_config('system')
+models = apps_config.get_models()
+
+for model in models:
+    admin.site.register(model)
