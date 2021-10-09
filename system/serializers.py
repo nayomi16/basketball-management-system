@@ -3,6 +3,7 @@ from rest_framework import serializers
 
 from .models import CoachModel, GameModel, PlayerModel, PlayerStatModel, RoleModel, TeamModel, TeamStatModel, UserRoleModel, UserStatModel
 
+
 class RoleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RoleModel
@@ -26,7 +27,7 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
 class GameSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = GameModel
-        fields = ('compet_team01', 'compet_team02', 'compet1_score', 'compet2_score', 'winner', 'date', 'round_number')
+        fields = ('host', 'guest', 'compet1_score', 'compet2_score', 'winner', 'date', 'round_number')
 
 class TeamStatSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

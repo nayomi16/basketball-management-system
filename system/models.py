@@ -23,7 +23,7 @@ class RoleModel(models.Model):
 
     def __str__(self):
         return str(self.type)
-        # return 'Type : %s, Id : %s' % (self.type, self.id)
+        
 
     def get_id(self):
         return str(self.id)
@@ -81,8 +81,8 @@ class GameModel(models.Model):
         (WI, 'Winner')
     ]
 
-    compet_team01 = models.ForeignKey(TeamModel, on_delete=models.CASCADE, related_name='host')
-    compet_team02 = models.ForeignKey(TeamModel, on_delete=models.CASCADE, related_name='guest')
+    host = models.ForeignKey(TeamModel, on_delete=models.CASCADE, related_name='host')
+    guest = models.ForeignKey(TeamModel, on_delete=models.CASCADE, related_name='guest')
     compet1_score = models.IntegerField()
     compet2_score = models.IntegerField()
     winner = models.ForeignKey(TeamModel, on_delete=models.CASCADE, related_name='winner')

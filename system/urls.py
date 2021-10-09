@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import CauchView
+from .views import HomeView, PlayerView
 
 urlpatterns = [
-    path('team', CauchView.as_view()),
+    path('home', HomeView.as_view()),
+    # path('login/<string:user>', LoginView.as_view())
+    path('player/<int:user>', PlayerView)
 ]
